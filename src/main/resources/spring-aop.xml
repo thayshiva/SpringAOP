@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd ">
+	
+	<aop:aspectj-autoproxy/>
+	
+	<bean id="circle" class="org.thayz.javabrains.model.Circle">
+		<property name="name" value="circle-1"/>
+	</bean>
+	<bean id="triangle" class="org.thayz.javabrains.model.Triangle">
+		<property name="name" value="triangle-1"/>
+	</bean>	
+	
+	<bean id="shapeService" class="org.thayz.javabrains.service.ShapeService" autowire="byName"/>
+	<bean id="loggingAspect" class="org.thayz.javabrains.aspect.LoggingAspect"/>
+	
+</beans>
